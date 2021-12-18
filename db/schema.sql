@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS extracted_db;
+CREATE DATABASE extracted_db;
