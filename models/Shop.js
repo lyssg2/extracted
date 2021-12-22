@@ -22,6 +22,10 @@ Shop.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         menu: {
             type: DataTypes.STRING,
             allowNull: true
