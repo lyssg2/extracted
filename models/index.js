@@ -15,13 +15,13 @@ Review.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
-Drink.hasMany(Review, {
-    foreignKey: 'review_id',
+Shop.hasMany(Review, {
+    foreignKey: 'shop_id',
     onDelete: 'CASCADE'
 })
 
-Review.belongsTo(Drink, {
-    foreignKey: 'review_id'
+Review.belongsTo(Shop, {
+    foreignKey: 'shop_id'
 })
 
 module.exports = { User, Drink, Shop, Review }

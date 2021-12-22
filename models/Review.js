@@ -29,10 +29,10 @@ Review.init(
                 key: 'id',
             },
         },
-        drink_id: {
+        shop_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'Drink',
+                model: 'Shop',
                 key: 'id',
             },
         }
