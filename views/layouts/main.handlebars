@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>extracted.</title>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">extracted.</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            {{#unless loggedIn}}
+              <li><a href="/login">LOGIN</a></li>
+            {{/unless}}
+            <li><a href="#" id="logout-link">LOGOUT</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <main>
+          
+        {{{body}}}
+
+      </main>
+
+      <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">For all your coffee needs....</h5>
+            </div>
+            <div class="col l4 offset-l2 s12">
+
+              <ul>
+                {{#if loggedIn}}
+                  <script src="/js/logout.js"></script>
+                  <script src="/js/home.js"></script>
+                {{/if}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
