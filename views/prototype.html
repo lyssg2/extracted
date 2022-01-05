@@ -1,0 +1,44 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>extracted.</title>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">extracted.</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="#" id="logout-link">LOGOUT</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <header>
+        <h1><a href="/dashboard">Your Dashboard</a></h1>
+      </header>
+
+      <main>
+        {{{body}}}
+      </main>
+
+      <footer class="page-footer">
+        <a href="/dashboard/new">New Post</a>
+      </footer>
+    </div>
+  </body>
