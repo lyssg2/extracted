@@ -3,8 +3,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>extracted.</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
 
   </head>
   <body>
@@ -14,20 +17,34 @@
           <a href="#" class="brand-logo">extracted.</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">HOME</a></li>
-            <li><a href="/dashboard">DASHBOARD</a></li>
+            <li><a href="/shop-page">SHOPS</a></li>
             {{#unless loggedIn}}
               <li><a href="/login">LOGIN</a></li>
             {{/unless}}
-            <li><a href="#" id="logout-link">LOGOUT</a></li>
+            {{#if loggedIn}}
+              <li><a href="#" id="logout-link">LOGOUT</a></li>
+            {{/if}}
           </ul>
         </div>
       </nav>
 
+      <div class="parallax-container">
+        <div class="parallax">
+          <img class="background" src="/public/images/coffeebackground.jpg" />
+        </div>
+      </div>
+
       <main>
-          
+
         {{{body}}}
-  
+
       </main>
+
+      <div class="parallax-container">
+        <div class="parallax">
+          <img class="background" src="/public/images/coffeebackground.jpg" />
+        </div>
+      </div>
 
       <footer class="page-footer black">
         <div class="container">
@@ -35,20 +52,13 @@
             <div class="col l6 s12">
               <h5 class="white-text">For all your coffee needs....</h5>
             </div>
-            <div class="col l4 offset-l2 s12">
-
-              <ul>
-                {{#if loggedIn}}
-                  <script src="/js/logout.js"></script>
-                  <script src="/js/home.js"></script>
-                {{/if}}
-              </ul>
-            </div>
           </div>
         </div>
       </footer>
     </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js "></script>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js "
+    </script>
+    <script src="/public/js/script.js"></script>
   </body>
 </html>

@@ -1,9 +1,5 @@
 const router = require('express').Router()
-<<<<<<< HEAD
-const User = require('../../models/User')
-=======
 const { User } = require('../../models');
->>>>>>> main
 
 // GET login route
 
