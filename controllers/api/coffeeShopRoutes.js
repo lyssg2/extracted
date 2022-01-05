@@ -1,10 +1,13 @@
 const router = require('express').Router()
+const Shop = require('../../models/Shop')
 
 // GET route
 
-router.get('/shop', async (req, res) => {
-    
-    res.render('shop-page')
+router.get('/', async (req, res) => {
+
+    const allShops = await Shop.findAll({ raw: true })
+    console.log('Shope!', allShops)
+    res.render('shop-page', { allShops })
 })
 
 // POST route

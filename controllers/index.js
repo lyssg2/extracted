@@ -1,5 +1,4 @@
 const router = require('express').Router()
-
 const htmlRoutes = require('./htmlRoutes')
 const coffeeShopRoutes = require('./api/coffeeShopRoutes')
 const reviewRoutes = require('./api/reviewRoutes')
