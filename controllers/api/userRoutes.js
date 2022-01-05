@@ -1,9 +1,5 @@
 const router = require('express').Router()
-<<<<<<< HEAD
-const User = require('../../models/User')
-=======
-const { User } = require('../../models');
->>>>>>> main
+const User = require('../../models');
 
 // GET login route
 
@@ -13,7 +9,7 @@ router.get('/login', async(req, res) => {
         return
     }
 
-    res.render('login-page')
+    res.render('login')
 })
 
 // GET signup route
@@ -71,15 +67,12 @@ router.post('/login', async(req, res) => {
 
 router.post('/logout', async(req, res) => {
     if (req.session.user_id) {
-        console.log('session logout file', req.session)
         req.session.destroy(() => {
             res.json({ message: 'Just signed you logged out' })
         })
     } else {
         res.json({ message: 'you are already logged out' })
     }
-
-    console.log('WE SMACKED Logout ROUTE!!!')
 })
 
 module.exports = router
