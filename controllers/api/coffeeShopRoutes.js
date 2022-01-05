@@ -1,10 +1,10 @@
 const router = require('express').Router()
 
-// Get route
+// GET route
 
-router.get('/', async (req, res) => {
-
-    res.render('homepage')
+router.get('/shop', async (req, res) => {
+    
+    res.render('shop-page')
 })
 
 // POST route
@@ -37,9 +37,6 @@ router.delete('/', async (req, res) => {
     }
 })
 
-router.get('/*', async (req, res) => {
 
-    res.render('homepage')
-})
 
 module.exports = router

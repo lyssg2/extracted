@@ -2,7 +2,6 @@
 // drink has many reviews, review belongs to drink
 
 const User = require('./User')
-const Drink = require('./Drink')
 const Shop = require('./Shop')
 const Review = require('./Review')
 
@@ -24,4 +23,4 @@ Review.belongsTo(Shop, {
     foreignKey: 'shop_id'
 })
 
-module.exports = { User, Drink, Shop, Review }
+module.exports = { User, Shop, Review }
