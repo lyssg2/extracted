@@ -25,10 +25,6 @@ Shop.init(
         description: {
             type: DataTypes.STRING,
             allowNull: true
-        },
-        menu: {
-            type: DataTypes.STRING,
-            allowNull: true
         }
     },
     {
@@ -36,7 +32,7 @@ Shop.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Shop'
+        modelName: 'shop'
     }
 )
 
