@@ -2,7 +2,7 @@ const router = require('express').Router()
 
 // GET route
 
-router.get('/review', async (req, res) => {
+router.get('/', async (req, res) => {
 
     res.render('review-page')
 })
@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
 
 // PUT route
 
-router.put('/', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
 
     } catch {
@@ -29,7 +29,7 @@ router.put('/', async (req, res) => {
 
 // Delete route
 
-router.delete('/', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
 
     } catch {
