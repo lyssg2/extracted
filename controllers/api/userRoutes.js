@@ -1,9 +1,13 @@
 const router = require('express').Router()
+<<<<<<< HEAD
 const User = require('../../models/User')
+=======
+const { User } = require('../../models');
+>>>>>>> main
 
 // GET login route
 
-router.get('/login', async (req, res) => {
+router.get('/login', async(req, res) => {
     if (req.session.logged_in) {
         res.redirect('/homepage')
         return
@@ -25,7 +29,7 @@ router.get('/signup', (req, res) => {
 
 // signup POST route 
 
-router.post('/signup', async (req, res) => {
+router.post('/signup', async(req, res) => {
     const newUserData = await User.create({
         name: req.body.name,
         email: req.body.email,
@@ -40,7 +44,7 @@ router.post('/signup', async (req, res) => {
 
 // login POST route
 
-router.post('/login', async (req, res) => {
+router.post('/login', async(req, res) => {
 
     const userData = await User.findOne({ where: { email: req.body.email } })
 
@@ -65,7 +69,7 @@ router.post('/login', async (req, res) => {
 
 // logout Delete route
 
-router.post('/logout', async (req, res) => {
+router.post('/logout', async(req, res) => {
     if (req.session.user_id) {
         console.log('session logout file', req.session)
         req.session.destroy(() => {
