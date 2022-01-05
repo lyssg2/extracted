@@ -1,64 +1,62 @@
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>extracted.</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <nav>
-        <div class="nav-wrapper black">
-          <a href="#" class="brand-logo">extracted.</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/">HOME</a></li>
-            <li><a href="/shop-page">SHOPS</a></li>
-            {{#unless loggedIn}}
-              <li><a href="/login">LOGIN</a></li>
-            {{/unless}}
-            {{#if loggedIn}}
-              <li><a href="#" id="logout-link">LOGOUT</a></li>
-            {{/if}}
-          </ul>
-        </div>
-      </nav>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>extracted.</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
 
-      <div class="parallax-container">
-        <div class="parallax">
-          <img class="background" src="/public/images/coffeebackground.jpg" />
-        </div>
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav>
+      <div class="nav-wrapper black">
+        <a href="#" class="brand-logo">extracted.</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/shop-page">SHOPS</a></li>
+          {{#unless loggedIn}}
+          <li><a href="/login">LOGIN</a></li>
+          {{/unless}}
+          {{#if loggedIn}}
+          <li><a href="#" id="logout-link">LOGOUT</a></li>
+          {{/if}}
+        </ul>
       </div>
+    </nav>
 
-      <main>
-
-        {{{body}}}
-
-      </main>
-
-      <div class="parallax-container">
-        <div class="parallax">
-          <img class="background" src="/public/images/coffeebackground.jpg" />
-        </div>
+    <div class="parallax-container">
+      <div class="parallax">
+        <img class="background" src="/public/images/coffeebackground.jpg" />
       </div>
+    </div>
 
-      <footer class="page-footer black">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">For all your coffee needs....</h5>
-            </div>
+    <main>
+
+      {{{body}}}
+
+    </main>
+
+    <div class="parallax-container">
+      <div class="parallax">
+        <img class="background" src="/public/images/coffeebackground.jpg" />
+      </div>
+    </div>
+
+    <footer class="page-footer black">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">For all your coffee needs....</h5>
           </div>
         </div>
-      </footer>
-    </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js "
-    </script>
-    <script src="/public/js/script.js"></script>
-  </body>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js "></script>
+  <script src="/public/js/script.js"></script>
+</body>
+
 </html>
