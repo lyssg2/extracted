@@ -1,19 +1,24 @@
-{{#each allShops }}
-{{!-- <h2>{{shopName}}</h2>
-<p>{{shopLocation}}</p>
-<p>{{description}}</p> --}}
-<div class="card">
-    <div class="card-image waves-effect waves-block waves-light">
+<h1 class="center-align">All The Best...</h1>
+
+<div class="container">
+  <div class="row center-align">
+    {{#each allShops }}
+    <div class="col s12 m6">
+      <div class="card large z-depth-2" id="shop-cards">
+        <div class="card-image">
+          <img src="/images/testimg.jpg">
+          <span class="card-title">{{shopName}}</span>
+        </div>
+        <div class="card-content">
+          <p>{{shopLocation}}</p>
+          <p>Rating:</p>
+          <p>{{description}}</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Add A Review</a>
+        </div>
+      </div>
     </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">{{shopName}}<i class="material-icons right">more_vert</i></span>
-      <p><a href="#">Go to Website</a></p>
-      <p>{{shopLocation}}</p>
-      <p>Rating:</p>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">{{shopName}}<i class="material-icons right">close</i></span>
-      <p>{{description}}</p>
-    </div>
+    {{/each}}
   </div>
-  {{/each}}
+</div>
