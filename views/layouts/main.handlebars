@@ -13,18 +13,22 @@
 <body>
   <header>
     <div class="wrapper">
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/">HOME</a></li>
+        <li><a href="/shop">SHOPS</a></li>
+        {{#unless loggedIn}}
+        <li><a href="/login">LOGIN</a></li>
+        {{/unless}}
+        {{#if loggedIn}}
+        <li><a href="#" id="logout-link">LOGOUT</a></li>
+        {{/if}}
+      </ul>
       <nav>
-        <div class="nav-wrapper black">
-          <a href="#" class="brand-logo">extracted.</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/">HOME</a></li>
-            <li><a href="/shop">SHOPS</a></li>
-            {{#unless loggedIn}}
-            <li><a href="/login">LOGIN</a></li>
-            {{/unless}}
-            {{#if loggedIn}}
-            <li><a href="#" id="logout-link">LOGOUT</a></li>
-            {{/if}}
+        <div class="nav-wrapper black topnav">
+          <a href="#!" class="brand-logo left">extracted.</a>
+          <ul class="right">
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i
+                  class="material-icons right">dehaze</i></a></li>
           </ul>
         </div>
       </nav>
@@ -36,7 +40,7 @@
     </div>
   </div>
 
-      {{{body}}}
+  {{{body}}}
 
   <div class="parallax-container">
     <div class="parallax">
