@@ -3,9 +3,10 @@ const { User } = require('../../models');
 
 // GET login route
 
-router.get('/login', async(req, res) => {
+router.get('/', async(req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/homepage')
+        res.redirect('/')
+        console.log('already logged in')
         return
     }
 
@@ -16,7 +17,7 @@ router.get('/login', async(req, res) => {
 
 router.get('/signup', (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/homepage')
+        res.redirect('/')
         return
     }
 
@@ -40,7 +41,7 @@ router.post('/signup', async(req, res) => {
 
 // login POST route
 
-router.post('/login', async(req, res) => {
+router.post('/', async(req, res) => {
 
     const userData = await User.findOne({ where: { email: req.body.email } })
 
