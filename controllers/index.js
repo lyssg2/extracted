@@ -8,5 +8,6 @@ router.use('/', htmlRoutes)
 router.use('/shop', coffeeShopRoutes)
 router.use('/review', reviewRoutes)
 router.use('/login', userRoutes)
+// router.use('/signup', userRoutes)
 
 module.exports = router
