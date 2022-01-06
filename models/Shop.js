@@ -18,6 +18,10 @@ Shop.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        shopPhoto: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         shopLocation: {
             type: DataTypes.STRING,
             allowNull: false

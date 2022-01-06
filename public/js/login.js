@@ -1,8 +1,7 @@
-$('#login').on('click', function() {
+$('#login').on('click', function () {
     console.log('login clicked')
 
     var login = {
-        name: $('#name').val(),
         email: $('#email').val(),
         password: $('#password').val()
     }
@@ -14,14 +13,14 @@ $('#login').on('click', function() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(login)
-    }).then(function(response) {
+    }).then(function (response) {
         return response.json()
-    }).then(function(data) {
+    }).then(function (data) {
         console.log('Data from Backed we got back after we did fetch!', data)
     })
 })
 
-$('#signup').on('click', function() {
+$('#signup').on('click', function () {
     console.log('signup clicked')
 
     var login = {
@@ -37,9 +36,9 @@ $('#signup').on('click', function() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(login)
-    }).then(function(response) {
+    }).then(function (response) {
         return response.json()
-    }).then(function(data) {
+    }).then(function (data) {
         console.log('Data from Backed we got back after we did fetch!', data)
     })
 })
