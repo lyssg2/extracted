@@ -23,3 +23,12 @@ main {
 #shop-cards {
     height: 550px;
 }
+
+#feature {
+    width: 300px;
+    height: 400px;
+}
+
+#feature-section {
+    margin-left: 100px;
+}

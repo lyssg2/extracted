@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('.parallax').parallax();
     $(".dropdown-trigger").dropdown();
-    $('.tap-target').tapTarget();
+    $('.materialboxed').materialbox();
 });
 
 M.AutoInit();
