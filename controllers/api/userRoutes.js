@@ -63,11 +63,11 @@ router.post('/', async(req, res) => {
         res.json(userData)
     })
 
-    // if(logged_in){
-    //     res.render('main', {
-    //         loggedIn: true
-    //     })
-    // }
+    if(logged_in){
+        res.render('main', {
+            loggedIn: true
+        })
+    }
 })
 
 // logout Delete route
@@ -77,9 +77,9 @@ router.post('/logout', async(req, res) => {
         req.session.destroy(() => {
             res.json({ message: 'Just signed you logged out' })
         })
-        // res.render('unsure if we want to render login our main here', {
-        //     loggedIn: false
-        // })
+        res.render('unsure if we want to render login our main here', {
+            loggedIn: false
+        })
     } else {
         res.json({ message: 'you are already logged out' })
     }
