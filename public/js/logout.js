@@ -11,5 +11,6 @@ $('#logout').on('click', function () {
         return response.json()
     }).then(function (data) {
         console.log('Data from Backed we got back after we did fetch!', data)
+        window.location.replace('/login')
     })
 })
