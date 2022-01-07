@@ -13,6 +13,23 @@ main {
     background-color: white;
 }
 
+.topnav {
+    background-color: #e9e9e9;
+}
+
+#searchbar {
+    float: right;
+    margin-right: 10px;
+}
+
+input {
+    font-family: 'Lora', serif;
+}
+
+.dropdown-content a {
+    color: black !important;
+}
+
 #top-parallax {
     height: 300px;
 }
