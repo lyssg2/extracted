@@ -17,18 +17,22 @@
         <li><a href="/">HOME</a></li>
         <li><a href="/shop">SHOPS</a></li>
         {{#if loggedIn}}
-          <li><a href="#" id="logout-link">LOGOUT</a></li>
-          {{else}}
-            <li><a href="/login">LOGIN</a></li>
+        <li><a href="#" id="logout-link">LOGOUT</a></li>
+        {{else}}
+        <li><a href="/login">LOGIN</a></li>
         {{/if}}
       </ul>
       <nav>
         <div class="nav-wrapper black topnav">
-          <a href="#!" class="brand-logo left">extracted.</a>
-          <ul class="right">
+          <a href="#!" class="brand-logo center">extracted.</a>
+          <ul class="left">
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i
                   class="material-icons right">dehaze</i></a></li>
           </ul>
+          <ul class="right" id="searchbar">
+            <li><input type="text" class="white-text" placeholder="Search.."></li>
+          </ul>
+          
         </div>
       </nav>
   </header>

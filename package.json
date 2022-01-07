@@ -29,5 +29,9 @@
         "jest": "^27.4.5",
         "mysql2": "^2.3.3",
         "sequelize": "^6.12.0"
+    },
+    "production": {
+        "use_env_variable": "JAWSDB_URL",
+        "dialect": "mysql"
     }
 }
