@@ -16,11 +16,10 @@
       <ul id="dropdown1" class="dropdown-content">
         <li><a href="/">HOME</a></li>
         <li><a href="/shop">SHOPS</a></li>
-        {{#unless loggedIn}}
-        <li><a href="/login">LOGIN</a></li>
-        {{/unless}}
         {{#if loggedIn}}
-        <li><a href="#" id="logout-link">LOGOUT</a></li>
+          <li><a href="#" id="logout-link">LOGOUT</a></li>
+          {{else}}
+            <li><a href="/login">LOGIN</a></li>
         {{/if}}
       </ul>
       <nav>
