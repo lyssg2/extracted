@@ -7,6 +7,5 @@ $('#logout').on('click', function() {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        //Remember to change bool for {{#if loggedIn}} in here or on route
     });
 })
