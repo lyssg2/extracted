@@ -63,12 +63,13 @@ router.post('/', async (req, res) => {
             res.json(userData)
         })
 
+
         if (logged_in) {
             res.render('main', {
                 loggedIn: true
             })
         }
-        res.render('homepage')
+
     } catch (err) {
         console.log(err)
     }
