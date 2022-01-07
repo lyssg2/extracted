@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('.parallax').parallax();
-    $(".dropdown-trigger").dropdown();
+    $(".dropdown-trigger").dropdown({ hover: true });
     $('.materialboxed').materialbox();
 });
 
