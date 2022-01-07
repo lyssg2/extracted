@@ -1,12 +1,13 @@
 const router = require('express').Router()
 const Shop = require('../../models/Shop')
+const Withauth = require('../../utils/auth')
 
 // GET route
 
-router.get('/', async (req, res) => {
+router.get('/', Withauth, async (req, res) => {
 
     const allShops = await Shop.findAll({ raw: true })
-    console.log('Shope!', allShops)
+    console.log('Shop!', allShops)
     res.render('shop-page', { allShops })
 })
 
