@@ -1,6 +1,6 @@
 $('#submitNewShop').on('click', function (e) {
-    e.preventDefault()
 
+    e.preventDefault()
     const newShop = {
         newShopName: $('#newShopName').val(),
         newShopNeighborhood: $('#newShopNeighborhood').val(),

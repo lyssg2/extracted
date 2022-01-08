@@ -35,7 +35,6 @@ router.post('/add/newshop', async (req, res) => {
 
         res.json(newShopData)
     } catch (err) {
-        console.log('Error!', err)
         res.json(err)
     }
 })

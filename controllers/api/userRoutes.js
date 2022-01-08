@@ -1,27 +1,15 @@
 const router = require('express').Router()
-const { User } = require('../../models');
+const { User } = require('../../models')
 
 // GET login route
 
 router.get('/', async (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/')
-        console.log('already logged in')
         return
     }
 
     res.render('login')
-})
-
-// GET signup route
-
-router.get('/signup', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/')
-        return
-    }
-
-    res.render('signup')
 })
 
 // signup POST route 
@@ -62,13 +50,6 @@ router.post('/', async (req, res) => {
 
             res.json(userData)
         })
-
-
-        if (logged_in) {
-            res.render('main', {
-                loggedIn: true
-            })
-        }
 
     } catch (err) {
         console.log(err)

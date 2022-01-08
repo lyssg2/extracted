@@ -1,5 +1,4 @@
-$('#submit-review').on('click', function() {
-    console.log('review added')
+$('#submit-review').on('click', function () {
 
     var newReview = {
         reviewName: $('#review-title').val(),
@@ -13,9 +12,8 @@ $('#submit-review').on('click', function() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(newReview)
-    }).then(function(response) {
+    }).then(function (response) {
         return response.json()
-    }).then(function(data) {
-        console.log('Data from Backed we got back after we did fetch!', data)
+    }).then(function (data) {
     })
 })

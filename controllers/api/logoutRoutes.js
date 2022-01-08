@@ -8,9 +8,6 @@ router.post('/', async (req, res) => {
             req.session.destroy(() => {
                 res.json({ message: 'Just logged you out' })
             })
-            res.render('logout', {
-                loggedIn: false
-            })
         } else {
             res.json({ message: 'you are already logged out' })
         }
