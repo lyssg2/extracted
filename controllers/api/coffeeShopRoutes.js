@@ -9,4 +9,14 @@ router.get('/', async (req, res) => {
     res.render('shop-page', { allShops })
 })
 
+router.get('/:id', async (req, res) => {
+
+    const oneShop = await Shop.findByPk({
+        where: {
+            id: req.params.id
+        }
+    })
+    res.render('review', { oneShop })
+})
+
 module.exports = router
