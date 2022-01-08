@@ -7,7 +7,6 @@ $('#submitNewShop').on('click', function (e) {
         newShopCity: $('#newShopCity option:selected').text(),
         newShopDescription: $('#newShopDescription').val()
     }
-    console.log('new shop', newShop)
 
     fetch('/review/add/newshop', {
         method: 'POST',
@@ -19,6 +18,5 @@ $('#submitNewShop').on('click', function (e) {
     }).then(function (response) {
         return response.json()
     }).then(function (data) {
-        console.log('Data from Backed we got back after we did fetch!', data)
     })
 })
