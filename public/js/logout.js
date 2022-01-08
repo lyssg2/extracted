@@ -1,5 +1,6 @@
-$('#logout').on('click', function () {
+$('#logout').on('click', function (e) {
 
+    e.preventDefault()
     fetch('/logout', {
         method: 'POST',
         headers: {

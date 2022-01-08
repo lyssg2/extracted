@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const Shop = require('../../models/Shop')
+
 // GET route
 
 router.get('/', async (req, res) => {
