@@ -27,6 +27,13 @@ NewShop.init(
         newShopDescription: {
             type: DataTypes.STRING,
             allowNull: true
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'User',
+                key: 'id',
+            }
         }
     },
     {

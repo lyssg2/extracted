@@ -1,14 +1,13 @@
 $('#submitNewShop').on('click', function (e) {
     e.preventDefault()
 
-    console.log('new shop submit clicked')
-
     const newShop = {
         newShopName: $('#newShopName').val(),
         newShopNeighborhood: $('#newShopNeighborhood').val(),
-        newShopCity: $('.newShopCity').val(),
+        newShopCity: $('#newShopCity option:selected').text(),
         newShopDescription: $('#newShopDescription').val()
     }
+    console.log('new shop', newShop)
 
     fetch('/review/add/newshop', {
         method: 'POST',
