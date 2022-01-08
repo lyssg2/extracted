@@ -1,8 +1,19 @@
-{{!-- <p>Title</p>
-<input id='review-title'></input>
-<p>Content</p>
-<input id='review-content'></input>
-<button id='submit-review'>Submit Review</button> --}}
+<div class="col s12 m6">
+    <div class="card large z-depth-2" id="shop-cards">
+        <div class="card-image">
+            <img src={{shopPhoto}}>
+            <span class="card-title">{{shopName}}</span>
+        </div>
+        <div class="card-content">
+            <p>{{shopLocation}}</p>
+            <p>Rating:</p>
+            <p>{{description}}</p>
+        </div>
+        <div class="card-action">
+            <a href="/review">Add A Review</a>
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
