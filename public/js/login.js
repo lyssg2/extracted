@@ -16,7 +16,7 @@ $('#login').on('click', function () {
     }).then(function (response) {
         return response.json()
     }).then(function (data) {
-        window.alert("you have logged in!")
+        window.alert("You have logged in!")
         window.location.replace('/')
     })
 })
