@@ -1,5 +1,6 @@
 const router = require('express').Router()
-const { Review } = require('../../models');
+const Review = require('../../models/Review')
+const NewShop = require('../../models/NewShop')
 
 // GET route
 
@@ -10,9 +11,8 @@ router.get('/', async (req, res) => {
 
 // add review POST route
 
-router.post('/add', async(req, res) => {
+router.post('/add', async (req, res) => {
     const newReviewData = await Review.create({
-        id: "placeholder, could use an id generator?",
         reviewName: req.body.reviewName,
         review: req.body.review,
         user_id: req.session.user_id,
@@ -20,26 +20,22 @@ router.post('/add', async(req, res) => {
     }, { raw: true })
 })
 
-// PUT route
+// add new shop POST route
 
-router.put('/:id', async (req, res) => {
+router.post('/add/newshop', async (req, res) => {
     try {
+        const newShopData = await NewShop.create({
+            newShopName: req.body.newShopName,
+            newShopNeighborhood: req.body.newShopNeighborhood,
+            newShopCity: req.body.newShopCity,
+            newShopDescription: req.body.newShopDescription
+        }, { raw: true })
 
-    } catch {
-
+        res.json(newShopData)
+    } catch (err) {
+        console.log('Error!', err)
+        res.json(err)
     }
 })
-
-// Delete route
-
-router.delete('/:id', async (req, res) => {
-    try {
-
-    } catch {
-
-    }
-})
-
-
 
 module.exports = router
