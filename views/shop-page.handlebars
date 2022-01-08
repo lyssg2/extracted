@@ -34,14 +34,14 @@
       <form class="col s12">
         <div class="row center-align">
           <div class="input-field col s12">
-            <input id="shop-name" type="text">
+            <input id="newShopName" type="text">
             <label for="first_name">Restaurant Name</label>
           </div>
           <div class="input-field col s6">
-            <input id="Neighborhood" type="text">
+            <input id="newShopNeighborhood" type="text">
             <label for="first_name">Neighborhood</label>
           </div>
-          <div class="input-field col s6">
+          <div class="input-field col s6 newShopCity">
             <select>
               <option value="" disabled selected>Location</option>
               <option value="1">Seattle</option>
@@ -136,12 +136,12 @@
             <form class="col s12">
               <div class="row">
                 <div class="input-field col s12">
-                  <textarea id="textarea1" class="materialize-textarea"></textarea>
-                  <label for="textarea1">Show your love here...</label>
+                  <textarea id="newShopDescription" class="materialize-textarea"></textarea>
+                  <label for="newShopDescription">Show your love here...</label>
                 </div>
               </div>
             </form>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <button class="btn waves-effect waves-light" id="submitNewShop" type="submit" name="action">Submit
               <i class="material-icons right">send</i>
             </button>
           </div>
