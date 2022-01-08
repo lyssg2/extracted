@@ -1,6 +1,6 @@
-$('#login').on('click', function () {
-    console.log('login clicked')
+$('#login').on('click', function (e) {
 
+    e.preventDefault()
     var login = {
         email: $('#email').val(),
         password: $('#password').val()
@@ -21,9 +21,9 @@ $('#login').on('click', function () {
     })
 })
 
-$('#signup').on('click', function () {
-    console.log('signup clicked')
+$('#signup').on('click', function (e) {
 
+    e.preventDefault()
     var login = {
         name: $('#name-signup').val(),
         email: $('#email-signup').val(),
@@ -40,6 +40,7 @@ $('#signup').on('click', function () {
     }).then(function (response) {
         return response.json()
     }).then(function (data) {
-        console.log('Data from Backed we got back after we did fetch!', data)
+        window.alert("Success! Created your account")
+        window.location.replace('/login')
     })
 })
