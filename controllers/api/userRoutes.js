@@ -3,7 +3,7 @@ const { User } = require('../../models');
 
 // GET login route
 
-router.get('/', async(req, res) => {
+router.get('/', async (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/')
         console.log('already logged in')
@@ -26,7 +26,7 @@ router.get('/signup', (req, res) => {
 
 // signup POST route 
 
-router.post('/signup', async(req, res) => {
+router.post('/signup', async (req, res) => {
     const newUserData = await User.create({
         name: req.body.name,
         email: req.body.email,
@@ -41,47 +41,37 @@ router.post('/signup', async(req, res) => {
 
 // login POST route
 
-router.post('/', async(req, res) => {
+router.post('/', async (req, res) => {
+    try {
+        const userData = await User.findOne({ where: { email: req.body.email } })
 
-    const userData = await User.findOne({ where: { email: req.body.email } })
+        if (!userData) {
+            res.json({ error: 'user not found' })
+        }
 
-    if (!userData) {
-        res.json({ error: 'user not found' })
-    }
+        const validPassword = await userData.checkPassword(req.body.password)
 
-    const validPassword = await userData.checkPassword(req.body.password)
+        if (validPassword === false) {
+            res.json({ error: 'password wrong' })
+        }
 
-    if (validPassword === false) {
-        res.json({ error: 'password wrong' })
-    }
+        // Create session variables based on the logged in user
+        req.session.save(() => {
+            req.session.user_id = userData.id
+            req.session.logged_in = true
 
-    // Create session variables based on the logged in user
-    req.session.save(() => {
-        req.session.user_id = userData.id
-        req.session.logged_in = true
-
-        res.json(userData)
-    })
-
-    // if(logged_in){
-    //     res.render('main', {
-    //         loggedIn: true
-    //     })
-    // }
-})
-
-// logout Delete route
-
-router.post('/logout', async(req, res) => {
-    if (req.session.user_id) {
-        req.session.destroy(() => {
-            res.json({ message: 'Just signed you logged out' })
+            res.json(userData)
         })
-        // res.render('unsure if we want to render login our main here', {
-        //     loggedIn: false
-        // })
-    } else {
-        res.json({ message: 'you are already logged out' })
+
+
+        if (logged_in) {
+            res.render('main', {
+                loggedIn: true
+            })
+        }
+
+    } catch (err) {
+        console.log(err)
     }
 })
 
