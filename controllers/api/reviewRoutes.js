@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const Review = require('../../models/Review')
 const NewShop = require('../../models/NewShop')
+const withAuth = require('../../utils/auth')
 
 // GET route
 
@@ -28,7 +29,8 @@ router.post('/add/newshop', async (req, res) => {
             newShopName: req.body.newShopName,
             newShopNeighborhood: req.body.newShopNeighborhood,
             newShopCity: req.body.newShopCity,
-            newShopDescription: req.body.newShopDescription
+            newShopDescription: req.body.newShopDescription,
+            user_id: req.session.user_id
         }, { raw: true })
 
         res.json(newShopData)
