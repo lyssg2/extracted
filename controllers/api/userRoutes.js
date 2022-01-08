@@ -3,7 +3,7 @@ const { User } = require('../../models')
 
 // GET login route
 
-router.get('/', async (req, res) => {
+router.get('/', async(req, res) => {
     if (req.session.logged_in) {
         res.redirect('/')
         return
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 
 // signup POST route 
 
-router.post('/signup', async (req, res) => {
+router.post('/signup', async(req, res) => {
     const newUserData = await User.create({
         name: req.body.name,
         email: req.body.email,
@@ -29,7 +29,7 @@ router.post('/signup', async (req, res) => {
 
 // login POST route
 
-router.post('/', async (req, res) => {
+router.post('/', async(req, res) => {
     try {
         const userData = await User.findOne({ where: { email: req.body.email } })
 
