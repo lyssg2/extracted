@@ -16,8 +16,7 @@ $('#login').on('click', function () {
     }).then(function (response) {
         return response.json()
     }).then(function (data) {
-        console.log('Data from Backed we got back after we did fetch!', data)
-        window.alert("you have loged in!")
+        window.alert("you have logged in!")
         window.location.replace('/')
     })
 })
