@@ -1,3 +1,4 @@
+ {{#each allShops }}
 <div class="col s12 m6">
     <div class="card large z-depth-2" id="shop-cards">
         <div class="card-image">
@@ -9,11 +10,9 @@
             <p>Rating:</p>
             <p>{{description}}</p>
         </div>
-        <div class="card-action">
-            <a href="/review">Add A Review</a>
-        </div>
     </div>
 </div>
+ {{/each}}
 
 <div class="container">
     <div class="row">
