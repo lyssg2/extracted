@@ -1,13 +1,15 @@
 const router = require('express').Router()
 const Review = require('../../models/Review')
+const Shop = require('../../models/Shop')
 const NewShop = require('../../models/NewShop')
 const withAuth = require('../../utils/auth')
 
 // GET route
 
-router.get('/', async (req, res) => {
-
-    res.render('review')
+router.get('/', withAuth, async (req, res) => {
+    const allShops = await Shop.findAll({ raw: true })
+    res.render('review', { allShops })
+    // res.render('review')
 })
 
 // add review POST route

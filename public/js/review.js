@@ -1,4 +1,8 @@
-$('#submit-review').on('click', function () {
+
+console.log('Review js has been loaded')
+
+$('#submit-review').on('click', function(event) {
+        event.preventDefault();
 
     var newReview = {
         reviewName: $('#review-title').val(),
@@ -14,6 +18,9 @@ $('#submit-review').on('click', function () {
         body: JSON.stringify(newReview)
     }).then(function (response) {
         return response.json()
-    }).then(function (data) {
+    }).then(function () {
+        console.log('Review has been added')
+        window.location.reload()
     })
 })
+
