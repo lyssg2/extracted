@@ -1,6 +1,9 @@
-# extracted
+# extracted.
 
 Extracted is a website that presents the best coffee shops in Seattle and Portland, with reviews posted by users to view to help make a decision on where to get their next cup of joe.
+
+![homepage](https://cdn.discordapp.com/attachments/695157509761269790/930355165129768960/unknown.png)
+![shoppage](https://cdn.discordapp.com/attachments/695157509761269790/930355432587935784/unknown.png)
 
 ## User Story
 
@@ -41,7 +44,7 @@ Required program(s) needed is any common internet browser with Javascript enable
   * On the shops page, the user can click on any shop to be led to the shop's page of info and reviews
     * On the shops page, logged in users are able to submit their own review of the shop and comment on other reviews.
 
-### Where to find Cocktail App
+### Where to find Extracted App
 
 The website can be found here: https://extracted-coffee.herokuapp.com/
 
