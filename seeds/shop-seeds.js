@@ -1,9 +1,8 @@
 const { Shop } = require('../models');
 
-const shopData = [
-    {
+const shopData = [{
         shopName: 'Coffee Vivace',
-        shopLocation: 'Captiol Hill, Seattle',
+        shopLocation: 'Capitol Hill, Seattle',
         shopPhoto: '/images/coffeeVivace.jpg',
         description: 'Espresso Vivace is a Seattle area coffee shop and roaster known for its coffee and roasting practices.'
     },

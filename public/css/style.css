@@ -61,6 +61,21 @@ input {
     margin-left: 100px;
 }
 
+#reviewShopPhoto {
+    margin-top: 50px;
+    width: 1000px;
+    height: 500px;
+    align-self: center;
+}
+
+#review-shop-img {
+    text-align: -webkit-center;
+}
+
+.review-title {
+    color: turquoise;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 959px) {
     .topnav {
         max-width: 100%;
