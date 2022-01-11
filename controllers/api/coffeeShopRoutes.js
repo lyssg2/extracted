@@ -1,5 +1,7 @@
 const router = require('express').Router()
 const Shop = require('../../models/Shop')
+const User = require('../../models/User')
+const Review = require('../../models/Review')
 
 // GET route
 

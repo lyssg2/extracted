@@ -1,27 +1,39 @@
-{{#each oneShop }}
-<div class="col s12 m6">
-    <div class="card large z-depth-2" id="shop-cards">
-        <div class="card-image">
-            <img id='reviewShopPhoto' src={{shopPhoto}}>
-            <span id='reviewShopName' class="card-title">{{shopName}}</span>
-        </div>
-        <div class="card-content">
-            <p id='reviewShopLocation'>{{shopLocation}}</p>
-            <br>
-            <p id='reviewShopDescription'>{{description}}</p>
+<div class="container">
+    <div class="row center-align">
+        {{#each oneShop }}
+        <div class="col s12">
+            <div class="card large z-depth-2" id="shop-cards">
+                <div class="card-image" id="review-shop-img">
+                    <img id='reviewShopPhoto' src={{shopPhoto}}>
+                    <span id='reviewShopName' class="card-title"><h5>{{shopName}}</h5></span>
+                </div>
+                <div class="card-content">
+                    <h5 id='reviewShopLocation'>{{shopLocation}}</h5>
+                    <br>
+                    <p id='reviewShopDescription'>{{description}}</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 {{/each}}
 
-{{#each reviews}}
 
-<h1>{{reviewName}}</h1>
-<p>{{review}}</p>
-
-
-{{/each}}
-
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <ul class="collection">
+                {{#each reviews}}
+                <li class="collection-item">
+                    <h6 class="review-title">{{reviewName}}</h6>
+                    <p>{{review}}</p>
+                    <p>Posted By: {{review.user_id}}</p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
@@ -37,7 +49,8 @@
                     <label for="textarea1">Tell us what you think...</label>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary" id="submit-review" type="submit">Submit Review</button>
+                    <button class="btn btn-primary" id="submit-review" type="submit">Submit
+                        Review</button>
                 </div>
             </form>
         </div>
