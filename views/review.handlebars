@@ -12,7 +12,15 @@
         </div>
     </div>
 </div>
- {{/each}}
+{{/each}}
+
+{{#each reviews}}
+
+<h1>{{reviewName}}</h1>
+<p>{{review}}</p>
+
+
+{{/each}}
 
 
 <div class="container">
@@ -35,11 +43,3 @@
         </div>
     </div>
 </div>
-
- {{#each reviews}}
-
-    <h1>{{reviewName}}</h1>
-    <p>{{review}}</p>
-
-
-{{/each}}
