@@ -1,18 +1,19 @@
- {{#each allShops }}
+{{#each oneShop }}
 <div class="col s12 m6">
     <div class="card large z-depth-2" id="shop-cards">
         <div class="card-image">
-            <img src={{shopPhoto}}>
-            <span class="card-title">{{shopName}}</span>
+            <img id='reviewShopPhoto' src={{shopPhoto}}>
+            <span id='reviewShopName' class="card-title">{{shopName}}</span>
         </div>
         <div class="card-content">
-            <p>{{shopLocation}}</p>
-            <p>Rating:</p>
-            <p>{{description}}</p>
+            <p id='reviewShopLocation'>{{shopLocation}}</p>
+            <br>
+            <p id='reviewShopDescription'>{{description}}</p>
         </div>
     </div>
 </div>
  {{/each}}
+
 
 <div class="container">
     <div class="row">
@@ -34,3 +35,11 @@
         </div>
     </div>
 </div>
+
+ {{#each Review}}
+
+    <h1>{{review-title}}</h1>
+    <p>{{review-content}}</p>
+
+
+{{/each}}

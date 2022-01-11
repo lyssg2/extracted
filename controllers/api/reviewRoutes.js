@@ -7,9 +7,13 @@ const withAuth = require('../../utils/auth')
 // GET route
 
 router.get('/', withAuth, async (req, res) => {
-    const allShops = await Shop.findAll({ raw: true })
-    res.render('review', { allShops })
-    // res.render('review')
+    const oneShop = await Shop.findAll({
+        raw: true,
+        where: {
+            id: 1
+        },
+    })
+    res.render('review', { oneShop })
 })
 
 // add review POST route
@@ -19,7 +23,7 @@ router.post('/add', async (req, res) => {
         reviewName: req.body.reviewName,
         review: req.body.review,
         user_id: req.session.user_id,
-        shop_id: req.session.shop_id,
+        shop_id: 1,
     }, { raw: true })
 })
 

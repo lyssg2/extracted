@@ -9,6 +9,8 @@ $('#submit-review').on('click', function(event) {
         review: $('#review-content').val(),
     }
 
+    console.log('WE GOT CLICKED!!', newReview)
+
     fetch('/review/add', {
         method: 'POST',
         headers: {
@@ -18,8 +20,9 @@ $('#submit-review').on('click', function(event) {
         body: JSON.stringify(newReview)
     }).then(function (response) {
         return response.json()
-    }).then(function () {
-        console.log('Review has been added')
+    }).then(function (data) {
+        console.log('Review has been added', data)
+        
         window.location.reload()
     })
 })
