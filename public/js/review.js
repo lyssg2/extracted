@@ -1,5 +1,3 @@
-console.log('Review js has been loaded')
-
 $('#submit-review').on('click', function(event) {
     event.preventDefault();
 
@@ -7,8 +5,6 @@ $('#submit-review').on('click', function(event) {
         reviewName: $('#review-title').val(),
         review: $('#review-content').val(),
     }
-
-    console.log('WE GOT CLICKED!!', newReview)
 
     fetch('/review', {
         method: 'POST',
