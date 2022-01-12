@@ -8,29 +8,30 @@ const withAuth = require('../../utils/auth')
 
 router.get('/', withAuth, async (req, res) => {
 
-   
-    const oneShop = await Shop.findAll({
-        raw: true,
-        where: { id: 1 },
-    })
+    try {
+        const oneShop = await Shop.findAll({
+            raw: true,
+            where: { id: 1 },
+        })
 
-    const reviews = await Review.findAll({ raw: true })
+        const reviews = await Review.findAll({ raw: true })
 
-    res.render('review', { oneShop, reviews })
+        res.status(200).render('review', { oneShop, reviews })
+    } catch (err) {
+        res.status(400).json(err)
+    }
 })
 
 // add review POST route
 
 router.post('/', withAuth, async (req, res) => {
-    
+
     try {
         const newReviewData = await Review.create({
             ...req.body,
             user_id: req.session.user_id,
         })
-
         res.status(200).json(newReviewData)
-
     } catch (err) {
         res.status(400).json(err)
     }
@@ -47,10 +48,9 @@ router.post('/add/newshop', async (req, res) => {
             newShopDescription: req.body.newShopDescription,
             user_id: req.session.user_id
         }, { raw: true })
-
-        res.json(newShopData)
+        res.status(200).json(newShopData)
     } catch (err) {
-        res.json(err)
+        res.status(400).json(err)
     }
 })
 

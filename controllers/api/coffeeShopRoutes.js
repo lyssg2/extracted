@@ -5,42 +5,41 @@ const Review = require('../../models/Review')
 
 // GET route
 
-router.get('/', async(req, res) => {
+router.get('/', async (req, res) => {
 
-    const allShops = await Shop.findAll({ raw: true })
-    res.render('shop-page', { allShops })
+    try {
+        const allShops = await Shop.findAll({ raw: true })
+
+        res.status(200).render('shop-page', { allShops })
+    } catch (err) {
+        res.status(400).json(err)
+    }
 })
 
-router.get('/:id', async(req, res) => {
+router.get('/:id', async (req, res) => {
 
-    const oneShop = await Shop.findByPk({
-        where: {
-            id: req.params.id
-        }
-    })
-    res.render('review', { oneShop })
+    try {
+        const oneShop = await Shop.findByPk({
+            where: { id: req.params.id }
+        })
+        res.status(200).render('review', { oneShop })
+    } catch (err) {
+        res.status(400).json(err)
+    }
 })
 
 // show all reviews on shop page
-router.get('/review', async(req, res) => {
+router.get('/review', async (req, res) => {
 
-    console.log('review get route smacked')
     try {
-        const reviewData = await Review.findAll({
-            include: [User],
-            where: { 'user_id': req.session.user_id },
-        });
-
-        console.log(reviewData)
+        const reviewData = await Review.findAll({})
 
         // Serializes data to pass through template
         const reviews = reviewData.map((review) => review.get({ plain: true }));
 
-        res.render('review', {
-            reviews
-        });
+        res.status(200).render('review', reviews)
     } catch (err) {
-        res.redirect('review');
+        res.status(400).redirect('review')
     }
 })
 
