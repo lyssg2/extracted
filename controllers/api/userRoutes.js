@@ -3,44 +3,53 @@ const { User } = require('../../models')
 
 // GET login route
 
-router.get('/', async(req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/')
-        return
-    }
+router.get('/', async (req, res) => {
 
-    res.render('login')
+    try {
+        if (req.session.logged_in) {
+            res.redirect('/')
+            return
+        }
+        res.status(200).render('login')
+    } catch (err) {
+        res.status(400).json(err)
+    }
 })
 
 // signup POST route 
 
-router.post('/signup', async(req, res) => {
-    const newUserData = await User.create({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-    }, { raw: true })
+router.post('/signup', async (req, res) => {
 
-    req.session.save(() => {
-        req.session.user_id = newUserData.id;
-        res.json({ message: 'You are now logged in!' })
-    })
+    try {
+        const newUserData = await User.create({
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password,
+        }, { raw: true })
+
+        req.session.save(() => {
+            req.session.user_id = newUserData.id;
+            res.status(200).json({ message: 'You are now logged in!' })
+        })
+    } catch (err) {
+        res.status(400).json(err)
+    }
 })
 
 // login POST route
 
-router.post('/', async(req, res) => {
+router.post('/', async (req, res) => {
     try {
         const userData = await User.findOne({ where: { email: req.body.email } })
 
         if (!userData) {
-            res.json({ error: 'user not found' })
+            res.status(400).json({ error: 'user not found' })
         }
 
         const validPassword = await userData.checkPassword(req.body.password)
 
         if (validPassword === false) {
-            res.json({ error: 'password wrong' })
+            res.status(400).json({ error: 'password wrong' })
         }
 
         // Create session variables based on the logged in user
@@ -48,11 +57,11 @@ router.post('/', async(req, res) => {
             req.session.user_id = userData.id
             req.session.logged_in = true
 
-            res.json(userData)
+            res.status(200).json(userData)
         })
 
     } catch (err) {
-        console.log(err)
+        res.status(400).json(err)
     }
 })
 
